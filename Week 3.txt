@@ -1,0 +1,32 @@
+﻿Lab: Network Management
+
+
+In this lab, we are going to configure SNMP services on fw01, web01 and ad01.  We are going to configure a network monitoring system called nmon01, where we will query our systems for SNMP properties.
+
+
+Configure SNMP:
+* Enable SNMP services on pfSense.  Fill out the SNMP Daemon settings, and pay attention to the community string.  Make sure to Bind SNMP to the LAN interface. Use your name for the System Contact.
+Configure Management Machine to allow SNMP
+
+
+Install SNMPD (a SNMP Server) on web01
+* Yum install net-snmp-utils net-snmp
+* Edit the /etc/snmp/snmpd.conf file
+   * enable and start the snmpd service
+   * check the status of the snmpd service and debug any errors
+   * allow port 161/udp or the snmp service through the firewall permanently
+   * From nm01, query web01
+
+
+
+Final  Steps:
+
+
+Install the SNMP-Tools Remote Administration Feature on MGM01
+Install the SNMP Service Feature on AD01 using Server Manager on MGMT
+
+
+Those Steps can be found in the computer management service in Windows. Also, you need to update the firewall.
+
+
+Once finished, capture packets!

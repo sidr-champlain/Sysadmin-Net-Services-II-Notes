@@ -1,0 +1,17 @@
+﻿Siddarth Ramdas
+
+
+Week 1 Lab00 Routing and Windows Overview: In this lab the goal is to set up the Firewall, Active Directory Domain, Management Server, and Regular Windows Workstation. 
+
+
+To set up the Pfsense Firewall you need the Wan and Lan IP. Also you need the WAN Upstream Gateway. To setup the AD on Server Core, On AD01, invoke PowerShell and use the CLI to install Active Directory and create a new Forest with a Domain Name.
+
+
+ When complete, you should be able to show that you are the Domain Admin account and NOT the Local Admin Pre-AD account. To setup Management Server using Windows Server GUI, add File Server Tools, AD DS and AD LDS Tools, DNS Server, DHCP Server, and File Services Tool. 
+These roles and features will allow Management server to add and manage the AD01 Server. Important Notes: Using Active Directory Users and Computers, create the following named users Example: first.lastname (normal user) Example: first.lastname-adm (named domain admin) Create a Reverse Lookup Zone for the Management Server Network Create an A record and PTR record for Firewall Manually add the PTR records for ad01 and mgmt01 Once 
+
+
+Complete: On MGMT01, logout and then re-login as your -adm@yourdomain account. Normally Setup your windows machine and set the network correctly. Make sure to have the DNS Server as AD01 so it can connect to the domain. 
+
+
+Now you are done! Check network connections by running tracert and finally create group policies using a management server.

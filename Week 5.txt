@@ -1,0 +1,60 @@
+﻿Lab: Git and SHH Script
+
+
+Overview: 
+
+
+This week  you do have a challenging lab and a scripting assignment that will involve docker01 and web01.
+
+
+Scripting is a valuable part of any sysadmin's toolkit. You have been exposed to bash during both web01 and docker01 labs.
+
+
+Prerequisites:
+
+
+Version control systems are prevalent in today's IT environments.  A firm knowledge of how to store different iterations of critical configurations and source code is therefore important.
+
+
+Install Git: apt install git
+
+
+Git allows users to clone repositories and update them using the command line interface. 
+Useful Commands:
+
+
+* Git push
+* Git pull 
+* Git commit 
+* Git config
+* Git add .
+
+
+My repo example for this lab is /docker-repo/sys/docker01
+
+
+So all my information for the docker lab has been in this folder on my github. All documents about docker01 can be found there. 
+
+
+You can use Git on windows to connect with linux machines through git. You can pull github repositories, push (update) and clone meaning copy the last updated form. 
+
+
+The latest security fix for github is now personal tokens are a must have in order to clone from a private repository. This makes it so connections over https can’t be used to allow for more security.
+
+
+Hardening SSH:
+
+
+Manually added a user for ssh without password:
+
+
+* Useradd -m -d /home/sys265 -s /bin/bash sys265
+* Mkdir /home/sys265/.ssh
+* Cp sys265/linux/public-keys/id_rsa.pub /home/sys265/.ssh/authorized_key
+   * The above command takes the key I created dform web01 and adds the user sys265 to passwordless credentials. It uses the private and public key
+* Chmod 700 /home/sys265/.ssh
+* Chmod 600 /home/sys265/.ssh/authorized_keys
+* Chown -R sys265:sys265 /home/sys265/.ssh
+
+
+The created script for this is on Github as well.

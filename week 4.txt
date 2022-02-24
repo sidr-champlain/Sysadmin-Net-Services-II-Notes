@@ -1,0 +1,13 @@
+﻿Docker on Ubuntu Cloud Server: During this week I setup a ubuntu cloud server with docker enabled. First I had to configure the network using NetPlan. I added in the correct addresses as well as editing the /etc/resolv.conf to add my nameserver 10.0.5.5.
+
+
+ This made it so I could add my machine to my Windows Active Directory Domain. Once that was enabled I then remote in using PowerShell. I went through the process of installing Docker. To double check docker was installed successfully I ran "docker run hello-world" This is a sample application that docker uses for testing. 
+
+
+Questions I answered along the way: 
+
+
+Print out the current version of Ubuntu on docker01. Print out the current version of docker01's Linux kernel. Invoke a container of the stored Ubuntu image as well as an interactive bash command prompt. Print out the kernel being used by the Ubuntu container. 
+
+
+I also installed WordPress through docker. That was exciting since I actually used SCP to send my file I had from my windows machine to my docker machine. I learned how to remotely send files via SCP and move them into respect directory using mv command
