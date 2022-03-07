@@ -1,6 +1,3 @@
-﻿Siddarth Ramdas
-
-
 Week 1 Lab00 Routing and Windows Overview: In this lab the goal is to set up the Firewall, Active Directory Domain, Management Server, and Regular Windows Workstation. 
 
 
