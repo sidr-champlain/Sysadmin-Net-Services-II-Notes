@@ -1,0 +1,46 @@
+File Services Lab: DFS
+
+Prerequisites There are two new Server Core 2019 VMs in your environment. They need to be properly networked, named, joined to your domain, and viewable via MGMT01. You may pick your own open LAN based IP addresses for these systems.
+
+File Server Role Make sure to install the file server role on both DFS1 and DFS2
+
+Create 2 shared folders Via Computer Management on DFS1, create a new Share named ‘dfs1’ with a folder path of C:\dfs1 which allows Domain Admins full access & others read-only access.
+
+Do the same for DFS2, changing the server and path names as appropriate.
+
+On WKS01 under your AD named-adm account, you should be able to access the two new shares. Create a file in each similar to that shown below.
+
+Install DFS:
+
+Install DFS Management Tools feature as a Remote Server Admin tool for file services on MGMT01.
+
+Add the two server roles DFS Namespace and DFS Replication for file and storage services on MGMT01.
+
+Add DFS Replication server role to both DFS1 and DFS2. Open the DFS Management Console under file & storage services on MGMT01.
+
+Configure DFS Namespace:
+
+Create a new DFS Namespace on MGMT01, making it a namespace server.
+
+Name the namespace “dfsshare”, editing the share permissions to allow all users read & write to a local path of C:\DFSRoots\dfshare for a domain-based namespace. See screenshot below.
+
+Creating a folder in the DFS Namespace:
+
+Create a new folder in your DFS Namespace called SYS265, and add Folder Targets from DFS1 and DFS2.
+
+Create a Replicate Folder for DFS Replication:
+
+Make certain to add both DFS1 & DFS2 to the DFS Replication Group:
+
+Create a Primary Member:
+
+Full Mesh with default settings to connect all DFS parties involved.
+
+Check Results
+
+Back on WKS01, you should be able to access the test file three ways: DFS1’s share, DFS2’s share, and via the new SYS265 DFS share:
+
+Conduct the following tests.
+
+With DFS1 still down, add a file to \dfs2\dfs2 called dfs2-test2.txt Re-run the ls test above on both \dfs2\dfs2 and on \yourname.local\dfsshare\sys265 Reconnect DFS1 and do the ls test on \dfs1\dfs1
+
