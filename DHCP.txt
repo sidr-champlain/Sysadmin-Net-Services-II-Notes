@@ -1,0 +1,10 @@
+﻿Siddarth Ramdas
+
+
+DHCP on Ad01: Today for our Lab I installed and configured DHCP on Windows ad01. 
+The installation was pretty straight forward. I chose the windows a01 since it's easier to setup instead of Pfsense. 
+To configure it successfully you need to have the right IP scopes, Subnet Mask, and Default Gateway.   
+
+
+Important Note: If you have your DNS and DHCP Server on one machine, the IP address will be the same in CMD. 
+Example: 10.0.5.5 for both DHCP and DNS Server. If you did it on a separate machine the address would be different.
