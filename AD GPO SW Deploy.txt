@@ -1,0 +1,30 @@
+Objectives: Setup GPO Deploy Application
+
+Prepare an OU, user & workstation
+
+Before we get into configuring a Group Policy Object (GPO) within Active Directory (AD), let’s set the AD stage to deploy a software package. Via AD Users & Computers, create a Software Deploy OU.
+
+
+For some fun … use PowerShell on AD01 via MGMT01 to figure out how to create another OU called “Software Deploy”, move WKS01 and your regular named account into it, and then delete the Test OU.
+
+💡Depending on how you created "Software Deploy OU", you may need to take another step to delete it.
+
+
+
+Deploying Software via GPO
+
+One popular GPO feature is deploying software across an AD domain.
+
+On MGMT01, download Putty’s x64-bit Windows Installer Package (uses the .msi file extension).
+
+Next, create a Share on MGMT01 named ‘Software’ and place Putty’s .msi in it, so users and computers (via GPO) can access & install it.
+
+Via Group Policy Management feature on MGMT (You may need to install this), create a new GPO named ‘Deploy SW’ within the Software Deploy OU.
+
+Edit the new GPO by creating a new Software installation, and assign Putty’s .msi package to deploy.
+
+With the new GPO setting, run “gpupdate /force” on WKS01, and then allow the restart when prompted. As always, read the message MS provides to understand why.
+
+It is always good to check the event log.
+
+Log on WKS01 under your regular named account, and view your new GPO installed Putty
